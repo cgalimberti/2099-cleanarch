@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package pb;
+
+service OrderService {
+    rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+}
+
+message ListOrdersRequest {
+}
+
+message ListOrdersResponse {
+    repeated Order orders = 1;
+}
+
+message Order {
+    string id = 1;
+    string customer_id = 2;
+    string status = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}
